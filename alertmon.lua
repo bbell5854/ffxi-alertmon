@@ -21,3 +21,15 @@ local function play_alert_sound()
   local fullpath = string.format('%s\\sounds\\%s', addon.path, 'imrcv.wav');
   ashita.misc.play_sound(fullpath);
 end
+
+---------------------------------------------------------------------------------------------------
+-- func: text_in
+-- desc: Event called when the addon is processing incoming text.
+---------------------------------------------------------------------------------------------------
+ashita.events.register('text_in', 'text_in_cb', function (e)
+  for _, v in ipairs(messages) do
+    if (string.find(e.message_modified, v)) then
+      play_alert_sound();
+    end
+  end
+end);
