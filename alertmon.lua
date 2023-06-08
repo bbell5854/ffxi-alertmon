@@ -4,12 +4,11 @@ addon.version = '1.0.0';
 
 require 'common'
 
-local imgui = require('imgui');
-
 -- enter the text items you would like to alert on here
 local messages = {
   "fission",
-  "baleful"
+  "baleful",
+  "chaotic"
 };
 
 ---------------------------------------------------------------------------------------------------
