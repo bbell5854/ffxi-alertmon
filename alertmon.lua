@@ -27,7 +27,7 @@ end
 ---------------------------------------------------------------------------------------------------
 ashita.events.register('text_in', 'text_in_cb', function (e)
   for _, v in ipairs(messages) do
-    if (string.find(e.message_modified, v)) then
+    if (string.find(string.lower(e.message_modified), string.lower(v))) then
       play_alert_sound();
     end
   end
